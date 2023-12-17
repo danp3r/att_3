@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.28'
+    implementation project(path: ':postgress')
+    implementation project(path: ':object_reader')
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '9.4.33.v20201020'
+
+}
+
+test {
+    useJUnitPlatform()
+}
